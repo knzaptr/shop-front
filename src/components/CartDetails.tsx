@@ -1,6 +1,7 @@
 "use client";
 import { useCartStore } from "../store/cartStore";
 import Image from "next/image";
+import Link from "next/link";
 export default function CartDetails() {
   const { items, increaseQty, decreaseQty, removeFromCart, total } =
     useCartStore();
@@ -41,12 +42,12 @@ export default function CartDetails() {
             <p className="text-slate-500">
               Ajoutez des produits pour commencer vos achats
             </p>
-            <a
+            <Link
               href="/products"
               className="inline-block px-6 py-3 bg-gradient-to-r from-blue-600 to-indigo-600 text-white font-medium rounded-xl hover:from-blue-700 hover:to-indigo-700 shadow-md hover:shadow-lg transition-all duration-300 hover:scale-105"
             >
               Découvrir nos produits
-            </a>
+            </Link>
           </div>
         </div>
       ) : (
@@ -120,19 +121,19 @@ export default function CartDetails() {
             </div>
 
             <div className="space-y-4">
-              <a
+              <Link
                 href="/payment"
                 className="w-full block text-center py-4 px-8 bg-gradient-to-r from-blue-600 to-indigo-600 text-white text-lg font-semibold rounded-2xl hover:from-blue-700 hover:to-indigo-700 shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105"
               >
                 Passer au paiement
-              </a>
+              </Link>
 
-              <a
+              <Link
                 href="/products"
                 className="w-full block text-center py-3 px-6 border border-slate-200 text-slate-700 font-medium rounded-xl hover:bg-slate-50 hover:border-slate-300 transition-all duration-200"
               >
                 Continuer les achats
-              </a>
+              </Link>
             </div>
           </div>
         </div>

@@ -2,6 +2,7 @@
 import { redirect } from "next/navigation";
 import { useCartStore } from "@/store/cartStore";
 import Image from "next/image";
+import Link from "next/link";
 export default function PaymentDetails({ isAuth }: { isAuth: boolean }) {
   if (!isAuth) {
     redirect("/users/login");
@@ -77,18 +78,18 @@ export default function PaymentDetails({ isAuth }: { isAuth: boolean }) {
           <div className="space-y-3"></div>
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <a
+            <Link
               href="/cart"
               className="px-6 py-3 bg-gradient-to-r from-blue-600 to-indigo-600 text-white font-medium rounded-xl hover:from-blue-700 hover:to-indigo-700 shadow-md hover:shadow-lg transition-all duration-300 hover:scale-105"
             >
               Modifier mon panier
-            </a>
-            <a
+            </Link>
+            <Link
               href="/products"
               className="px-6 py-3 border border-slate-200 text-slate-700 font-medium rounded-xl hover:bg-slate-50 hover:border-slate-300 transition-all duration-200"
             >
               Continuer les achats
-            </a>
+            </Link>
           </div>
         </div>
       </div>
